@@ -117,28 +117,28 @@ export default function App() {
         </h1>
         <div className='flex gap-6 py-8'>
           <div className="rounded-lg p-2 transition-all duration-300 hover:bg-purple-500/20 hover:shadow-lg hover:shadow-purple-500/30">
-            <img src="./src/assets/better-auth-light.svg" alt="Better Auth" className="h-8 w-8 transition-all duration-300 hover:scale-110" title="Better Auth" />
+            <img src="/better-auth-light.svg" alt="Better Auth" className="h-8 w-8 transition-all duration-300 hover:scale-110" title="Better Auth" />
           </div>
           <div className="rounded-lg p-2 transition-all duration-300 hover:bg-purple-500/20 hover:shadow-lg hover:shadow-purple-500/30">
-            <img src="./src/assets/nextjs-light.svg" alt="Next.js" className="h-8 w-8 transition-all duration-300 hover:scale-110" title="Next.js" />
+            <img src="/nextjs-light.svg" alt="Next.js" className="h-8 w-8 transition-all duration-300 hover:scale-110" title="Next.js" />
           </div>
           <div className="rounded-lg p-2 transition-all duration-300 hover:bg-purple-500/20 hover:shadow-lg hover:shadow-purple-500/30">
-            <img src="./src/assets/tanstack-query-light.svg" alt="TanStack Query" className="h-8 w-8 transition-all duration-300 hover:scale-110" title="TanStack Query" />
+            <img src="/tanstack-query-light.svg" alt="TanStack Query" className="h-8 w-8 transition-all duration-300 hover:scale-110" title="TanStack Query" />
           </div>
           <div className="rounded-lg p-2 transition-all duration-300 hover:bg-purple-500/20 hover:shadow-lg hover:shadow-purple-500/30">
-            <img src="./src/assets/zod-light.svg" alt="Zod" className="h-8 w-8 transition-all duration-300 hover:scale-110" title="Zod" />
+            <img src="/zod-light.svg" alt="Zod" className="h-8 w-8 transition-all duration-300 hover:scale-110" title="Zod" />
           </div>
           <div className="rounded-lg p-2 transition-all duration-300 hover:bg-purple-500/20 hover:shadow-lg hover:shadow-purple-500/30">
-            <img src="./src/assets/prisma-light.svg" alt="Prisma" className="h-8 w-8 transition-all duration-300 hover:scale-110" title="Prisma" />
+            <img src="/prisma-light.svg" alt="Prisma" className="h-8 w-8 transition-all duration-300 hover:scale-110" title="Prisma" />
           </div>
           <div className="rounded-lg p-2 transition-all duration-300 hover:bg-purple-500/20 hover:shadow-lg hover:shadow-purple-500/30">
-            <img src="./src/assets/neon-light.svg" alt="Neon" className="h-8 w-8 transition-all duration-300 hover:scale-110" title="Neon" />
+            <img src="/neon-light.svg" alt="Neon" className="h-8 w-8 transition-all duration-300 hover:scale-110" title="Neon" />
           </div>
           <div className="rounded-lg p-2 transition-all duration-300 hover:bg-purple-500/20 hover:shadow-lg hover:shadow-purple-500/30">
-            <img src="./src/assets/shadcn-ui-light.svg" alt="shadcn/ui" className="h-8 w-8 transition-all duration-300 hover:scale-110" title="shadcn/ui" />
+            <img src="/shadcn-ui-light.svg" alt="shadcn/ui" className="h-8 w-8 transition-all duration-300 hover:scale-110" title="shadcn/ui" />
           </div>
           <div className="rounded-lg p-2 transition-all duration-300 hover:bg-purple-500/20 hover:shadow-lg hover:shadow-purple-500/30">
-            <img src="./src/assets/react-hook-form-light.svg" alt="React Hook Form" className="h-8 w-8 transition-all duration-300 hover:scale-110" title="React Hook Form" />
+            <img src="/react-hook-form-light.svg" alt="React Hook Form" className="h-8 w-8 transition-all duration-300 hover:scale-110" title="React Hook Form" />
           </div>
         </div>
         <p className="max-w-xl text-lg text-gray-600 dark:text-gray-400">
