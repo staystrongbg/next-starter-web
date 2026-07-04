@@ -215,7 +215,7 @@ export default function App() {
           Build faster with a complete foundation
         </h1>
         <TechImages />
-        <p className="w-full max-w-2xl md:text-base text-sm text-gray-400">
+        <p className="w-full max-w-3xl md:text-base text-sm text-gray-400">
           Everything you need to start building production-ready applications. TypeScript, Tailwind
           CSS, authentication, and neon postgresql database — all pre-configured
         </p>
@@ -239,8 +239,8 @@ function GitRepo() {
   return (
     <div className="flex items-center gap-2">
       <p className="text-sm text-gray-400">Repository</p>
-    <div className="flex items-center gap-1 text-sm">
-      <GitBranch className="h-4 w-4 text-gray-200" / >
+    <div className="flex items-center gap-1 text-sm md:text-base">
+      <GitBranch className="h-4 w-4 text-gray-200" />
       <a className="text-cyan-400 hover:text-cyan-300 transition-colors" href="https://github.com/staystrongbg/next-starter" target="_blank" rel="noopener noreferrer">
         GitHub
       </a>
@@ -251,7 +251,7 @@ function GitRepo() {
 
 function Resources() {
   return( 
-      <div className="flex gap-2 text-sm text-gray-100">
+      <div className="flex gap-2 md:text-base text-sm text-gray-100">
         <div className="text-gray-400">Resources</div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
           {resources.map((resource) => (
@@ -286,14 +286,14 @@ function Features() {
       {features.map(feature => (
         <div
           key={feature.title}
-          className="group flex flex-col gap-4 rounded-xl border border-gray-800 p-4 md:p-6 transition-all hover:shadow-md :border-indigo-900/50 bg-slate-800/50 backdrop-blur-sm hover:border-indigo-500/50 hover:shadow-indigo-500/10"
+          className="group flex flex-col gap-4 rounded-xl border border-gray-800 p-4 md:p-6 transition-all hover:shadow-md bg-slate-800/50 backdrop-blur-sm hover:border-indigo-500/50 hover:shadow-indigo-500/10"
         >
           <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-950 text-indigo-400">
             <feature.icon className="h-4 w-4 text-indigo-400" />
           </div>
           <div>
             <h3 className="font-semibold text-gray-100">{feature.title}</h3>
-            <p className="mt-1 text-sm text-gray-600 ">{feature.description}</p>
+            <p className="mt-1 md:text-base text-sm text-gray-600 ">{feature.description}</p>
           </div>
         </div>
       ))}
