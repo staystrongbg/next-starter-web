@@ -26,6 +26,11 @@ interface TechImage {
   alt: string;
   title: string;
 }
+interface Resources {
+  name: string;
+  url: string;
+  img?: string;
+}
 
 const features: Feature[] = [
   {
@@ -59,6 +64,50 @@ const features: Feature[] = [
     description: 'Prettier, ESLint, and shadcn/ui components included.',
   },
 ];
+
+const resources:Resources[] = [
+  {
+    name:'Next.js',
+    url:'https://nextjs.org/docs',
+    img: '/nextjs-light.svg'
+  },
+  {
+    name:'Better Auth',
+    url:'https://better-auth.com/docs',
+    img: '/better-auth-light.svg'
+  },
+  {
+    name:'Prisma',
+    url:'https://www.prisma.io/docs/',
+    img: '/prisma-light.svg'
+  },
+  {
+    name:'TanStack Query',
+    url:'https://tanstack.com/query/latest',
+    img: '/tanstack-query-light.svg'
+  },
+  {
+    name:'Zod',
+    url:'https://zod.dev/',
+    img: '/zod-light.svg'
+  },
+  {
+    name:'shadcn/ui',
+    url:'https://ui.shadcn.com/docs',
+    img: '/shadcn-ui-light.svg'
+  },
+  {
+    name:'Neon',
+    url:'https://neon.tech/docs',
+    img: '/neon-light.svg'
+  },
+  {
+    name:'React Hook Form',
+    url:'https://react-hook-form.com/docs',
+    img: '/react-hook-form-light.svg'
+  }
+]
+
 
 
 const fileTree: FileTreeItem[] = [
@@ -170,24 +219,46 @@ export default function App() {
           CSS, authentication, and neon postgresql database — all pre-configured
         </p>
       </div>
-
-      <Features />
-      <FolderStructure />
-      <Resources />
+      <div className='flex flex-col gap-12'>
+        <Features />
+        <FolderStructure />
+      </div>
+      <div className="flex flex-col gap-4">
+        <GitRepo />
+        <Resources />
+      </div>
       <Footer />
     </div>
   );
 }
 
+function GitRepo() {
+  return (
+    <div className="flex items-center gap-2">
+      <p className="text-sm font-medium text-gray-400">Repository</p>
+    <div className="flex items-center gap-2">
+      <GitBranch className="h-4 w-4 text-gray-200" / >
+      <a className="dark:text-cyan-400 dark:hover:text-cyan-300 transition-colors" href="https://github.com/staystrongbg/next-starter" target="_blank" rel="noopener noreferrer">
+        GitHub
+      </a>
+    </div>
+    </div>
+  );
+}
+
 function Resources() {
-  return(
-      <div className="flex items-center gap-2 text-lg text-gray-100">
+  return( 
+      <div className="flex items-center gap-2 text-sm text-gray-100">
         <div className="text-sm font-medium dark:text-gray-400">Resources</div>
-        <div className="flex items-center gap-2">
-          <GitBranch className="h-4 w-4 dark:text-emerald-400" />
-          <a className="dark:text-cyan-400 dark:hover:text-cyan-300 transition-colors" href="https://github.com/staystrongbg/next-starter" target="_blank" rel="noopener noreferrer">
-            GitHub
-          </a>
+        <div className="flex items-center gap-3">
+          {resources.map((resource) => (
+            <div key={resource.name} className="flex items-center gap-1">
+              {resource.img && <img src={resource.img} alt={resource.name} className="h-4 w-4" />}
+              <a className="dark:text-cyan-400 dark:hover:text-cyan-300 transition-colors" href={resource.url} target="_blank" rel="noopener noreferrer">
+                {resource.name}
+              </a>
+            </div>
+          ))}
         </div>
       </div>
   )
@@ -231,9 +302,10 @@ function FolderStructure() {
     <div className="w-full" aria-label="Project structure">
       <div className="mb-6 text-center">
         <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100">Project Structure</h2>
+        <p className="text-sm text-gray-600 dark:text-gray-400">Explore the folder structure of Next-Starter</p>
       </div>
-      <div className="h-[50vh] w-full overflow-y-scroll rounded-xl border border-gray-200 bg-gray-200 dark:border-indigo-900/50 dark:bg-slate-900">
-        <div className="bg-gray-700 px-4 py-2 text-xs font-medium text-orange-500 dark:bg-slate-800 dark:text-orange-400">
+      <div className="h-[50vh] w-full overflow-y-scroll rounded-xl border border-gray-200 dark:border-indigo-900/50 bg-slate-900">
+        <div className="bg-slate-800 px-4 py-2 text-xs font-medium text-orange-500 dark:text-orange-400">
           next-starter/
         </div>
         <div className="p-4">
