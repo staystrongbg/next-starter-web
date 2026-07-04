@@ -183,7 +183,7 @@ function renderInlineCode(text: string) {
   const parts = text.split(/(`[^`]+`)/g);
   return parts.map((part, i) => {
     if (part.startsWith('`') && part.endsWith('`')) {
-      return <code key={i} className='bg-gray-800 px-1 py-0.5 rounded'>{part.slice(1, -1)}</code>;
+      return <code key={i} className='bg-gray-800 px-1 py-0.5 rounded text-sm'>{part.slice(1, -1)}</code>;
     }
     return part;
   });
@@ -285,10 +285,10 @@ function Features() {
       {features.map(feature => (
         <div
           key={feature.title}
-          className="group flex flex-col gap-4 rounded-xl border border-gray-800 p-6 transition-all hover:shadow-md :border-indigo-900/50 bg-slate-800/50 backdrop-blur-sm hover:border-indigo-500/50 hover:shadow-indigo-500/10"
+          className="group flex flex-col gap-4 rounded-xl border border-gray-800 p-4 md:p-6 transition-all hover:shadow-md :border-indigo-900/50 bg-slate-800/50 backdrop-blur-sm hover:border-indigo-500/50 hover:shadow-indigo-500/10"
         >
           <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-950 text-indigo-400">
-            <feature.icon className="h-5 w-5 text-indigo-400" />
+            <feature.icon className="h-4 w-4 text-indigo-400" />
           </div>
           <div>
             <h3 className="font-semibold text-gray-100">{feature.title}</h3>
