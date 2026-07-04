@@ -211,11 +211,11 @@ export default function App() {
             Next.js Starter Kit
           </span>
         </div>
-        <h1 className="max-w-2xl text-3xl md:text-4xl font-bold tracking-tight sm:text-5xl text-gray-100">
+        <h1 className="max-w-2xl w-full text-3xl md:text-4xl font-bold tracking-tight sm:text-5xl text-gray-100">
           Build faster with a complete foundation
         </h1>
         <TechImages />
-        <p className="md:max-w-2xl max-w-md md:text-base text-sm text-gray-400">
+        <p className="max-w-2xl w-full md:text-base text-sm text-gray-400">
           Everything you need to start building production-ready applications. TypeScript, Tailwind
           CSS, authentication, and neon postgresql database — all pre-configured
         </p>
