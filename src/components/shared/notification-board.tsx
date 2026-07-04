@@ -13,25 +13,25 @@ const styles: Record<
   { border: string; bg: string; icon: typeof InfoIcon; iconColor: string; textColor: string }
 > = {
   info: {
-    border: 'border-blue-300 dark:border-blue-700',
-    bg: 'bg-blue-100 dark:bg-blue-900',
+    border: 'border-blue-700',
+    bg: 'bg-blue-900',
     icon: InfoIcon,
-    iconColor: 'text-blue-700 dark:text-blue-300',
-    textColor: 'text-blue-900 dark:text-blue-100',
+    iconColor: 'text-blue-300',
+    textColor: 'text-blue-100',
   },
   warning: {
-    border: 'border-yellow-300 dark:border-yellow-700',
-    bg: 'bg-yellow-100 dark:bg-yellow-900',
+    border: 'border-yellow-700',
+    bg: 'bg-yellow-900',
     icon: TriangleAlertIcon,
-    iconColor: 'text-yellow-800 dark:text-yellow-200',
-    textColor: 'text-yellow-950 dark:text-yellow-50',
+    iconColor: 'text-yellow-200',
+    textColor: 'text-yellow-50',
   },
   error: {
-    border: 'border-red-300 dark:border-red-700',
-    bg: 'bg-red-100 dark:bg-red-900',
+    border: 'border-red-700',
+    bg: 'bg-red-900',
     icon: AlertCircleIcon,
-    iconColor: 'text-red-700 dark:text-red-300',
-    textColor: 'text-red-950 dark:text-red-50',
+    iconColor: 'text-red-300',
+    textColor: 'text-red-50',
   },
 };
 

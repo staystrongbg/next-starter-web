@@ -238,8 +238,8 @@ export default function App() {
 function GitRepo() {
   return (
     <div className="flex items-center gap-2">
-      <p className="text-sm font-medium text-gray-400">Repository</p>
-    <div className="flex items-center gap-2">
+      <p className="text-sm text-gray-400">Repository</p>
+    <div className="flex items-center gap-1 text-sm">
       <GitBranch className="h-4 w-4 text-gray-200" / >
       <a className="text-cyan-400 hover:text-cyan-300 transition-colors" href="https://github.com/staystrongbg/next-starter" target="_blank" rel="noopener noreferrer">
         GitHub
@@ -251,9 +251,9 @@ function GitRepo() {
 
 function Resources() {
   return( 
-      <div className="flex items-center gap-2 text-sm text-gray-100">
-        <div className="text-sm font-medium text-gray-400">Resources</div>
-        <div className="flex items-center gap-3">
+      <div className="flex gap-2 text-sm text-gray-100">
+        <div className="text-gray-400">Resources</div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
           {resources.map((resource) => (
             <div key={resource.name} className="flex items-center gap-1">
               {resource.img && <img src={resource.img} alt={resource.name} className="h-4 w-4" />}
