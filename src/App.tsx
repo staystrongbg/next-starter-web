@@ -215,7 +215,7 @@ export default function App() {
           Build faster with a complete foundation
         </h1>
         <TechImages />
-        <p className="w-full max-w-3xl md:text-base text-sm text-gray-400">
+        <p className="w-full max-w-3xl text-sm md:text-base text-gray-400">
           Everything you need to start building production-ready applications. TypeScript, Tailwind
           CSS, authentication, and neon postgresql database — all pre-configured
         </p>
@@ -238,7 +238,7 @@ export default function App() {
 function GitRepo() {
   return (
     <div className="flex items-center gap-2">
-      <p className="text-sm text-gray-400">Repository</p>
+      <p className="text-sm md:text-base text-gray-400">Repository</p>
     <div className="flex items-center gap-1 text-sm md:text-base">
       <GitBranch className="h-4 w-4 text-gray-200" />
       <a className="text-cyan-400 hover:text-cyan-300 transition-colors" href="https://github.com/staystrongbg/next-starter" target="_blank" rel="noopener noreferrer">
@@ -251,7 +251,7 @@ function GitRepo() {
 
 function Resources() {
   return( 
-      <div className="flex gap-2 md:text-base text-sm text-gray-100">
+      <div className="flex gap-2 text-sm md:text-base text-gray-100">
         <div className="text-gray-400">Resources</div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
           {resources.map((resource) => (
@@ -293,7 +293,7 @@ function Features() {
           </div>
           <div>
             <h3 className="font-semibold text-gray-100">{feature.title}</h3>
-            <p className="mt-1 md:text-base text-sm text-gray-600 ">{feature.description}</p>
+            <p className="mt-1 text-sm md:text-base text-gray-600">{feature.description}</p>
           </div>
         </div>
       ))}
