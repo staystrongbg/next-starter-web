@@ -1,9 +1,33 @@
-import { Database, FileCode, Folder, GitBranch, Layers, Rocket, Shield, Zap } from 'lucide-react';
 import { NotificationBoard } from './components/shared/notification-board';
 import { Footer } from './components/navigation/footer';
 import { SpiderWeb } from './components/spider-web';
 
-const features = [
+import { Database, FileCode, Folder, GitBranch, Layers, Rocket, Shield, Zap } from 'lucide-react';
+
+interface Notification {
+  text: string;
+  type?: 'info' | 'warning' | 'error';
+}
+
+interface Feature {
+  icon: React.ElementType;
+  title: string;
+  description: string;
+}
+
+interface FileTreeItem {
+  name: string;
+  type: 'folder' | 'file';
+  indent: number;
+}
+
+interface TechImage {
+  src: string;
+  alt: string;
+  title: string;
+}
+
+const features: Feature[] = [
   {
     icon: Shield,
     title: 'Authentication',
@@ -36,7 +60,8 @@ const features = [
   },
 ];
 
-const fileTree = [
+
+const fileTree: FileTreeItem[] = [
   { name: 'src/', type: 'folder', indent: 0 },
   { name: 'app/', type: 'folder', indent: 1 },
   { name: '(auth)/', type: 'folder', indent: 2 },
@@ -85,7 +110,7 @@ const fileTree = [
   { name: 'settings.json', type: 'file', indent: 1 },
 ];
 
-const techImages = [
+const techImages: TechImage[] = [
   { src: '/nextjs-light.svg', alt: 'Next.js', title: 'Next.js' },
   { src: '/neon-light.svg', alt: 'Neon', title: 'Neon' },
   { src: '/shadcn-ui-light.svg', alt: 'shadcn/ui', title: 'shadcn/ui' },
@@ -94,8 +119,25 @@ const techImages = [
   { src: '/zod-light.svg', alt: 'Zod', title: 'Zod' },
   { src: '/better-auth-light.svg', alt: 'Better Auth', title: 'Better Auth' },
   { src: '/tanstack-query-light.svg', alt: 'TanStack Query', title: 'TanStack Query' },
-
 ];
+
+
+const notifications: Notification[] = [
+  { text: 'Note that experimental Nextjs `AuthInterups` feature is enabled for handling unauthorized redirections' },
+  { text: '`.env.example` is a good place to start' },
+  { text: 'To use Github or any social authentication, set up the corresponding environment variables and enable the providers in the `auth.ts`' },
+  { text: 'Modify `schema.prisma` file and run `db:push`' },
+];
+
+function renderInlineCode(text: string) {
+  const parts = text.split(/(`[^`]+`)/g);
+  return parts.map((part, i) => {
+    if (part.startsWith('`') && part.endsWith('`')) {
+      return <code key={i} className='bg-gray-800 px-1 py-0.5 rounded'>{part.slice(1, -1)}</code>;
+    }
+    return part;
+  });
+}
 
 export default function App() {
   return (
@@ -104,24 +146,11 @@ export default function App() {
 
       {/* Notifications */}
       <div className="flex flex-col items-center gap-6 text-center">
-        <NotificationBoard>
-          Note that experimental Nextjs{' '}
-          <CodeBlock bg="bg-blue-200 dark:bg-indigo-950">AuthInterups</CodeBlock> feature is enabled
-          for handling unauthorized redirections
-        </NotificationBoard>
-        <NotificationBoard>
-          <CodeBlock bg="bg-blue-200 dark:bg-indigo-950">.env.example</CodeBlock> is a good place to
-          start
-        </NotificationBoard>
-        <NotificationBoard>
-          To use Github or any social authentication, set up the corresponding environment variables
-          and enable the providers in the{' '}
-          <CodeBlock bg="bg-blue-200 dark:bg-indigo-950">auth.ts</CodeBlock>
-        </NotificationBoard>
-        <NotificationBoard>
-          Modify <CodeBlock bg="bg-blue-200 dark:bg-indigo-950">schema.prisma</CodeBlock> file and run{' '}
-          <CodeBlock bg="bg-blue-200 dark:bg-indigo-950">db:push</CodeBlock>
-        </NotificationBoard>
+        {notifications.map((n, i) => (
+          <NotificationBoard key={i} type={n.type}>
+            {renderInlineCode(n.text)}
+          </NotificationBoard>
+        ))}
       </div>
 
       {/* Description */}
@@ -240,11 +269,3 @@ function FolderStructure() {
     </div>
   );
 }
-
-const CodeBlock = ({ bg, children }: { bg: string; children: React.ReactNode }) => {
-  return (
-    <span className={bg}>
-      <code className="p-2">{children}</code>
-    </span>
-  );
-};
