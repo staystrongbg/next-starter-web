@@ -269,10 +269,10 @@ function Resources() {
 
 function TechImages() {
   return (
-    <div className='flex gap-2 md:gap-6 py-8'>
+    <div className='flex gap-4 md:gap-6 py-4 md:py-8'>
       {techImages.map((techImg) => (
         <div key={techImg.alt} className="rounded-lg p-2 transition-all duration-300 hover:bg-purple-500/20 hover:shadow-lg hover:shadow-purple-500/30 flex flex-col items-center">
-          <img src={techImg.src} alt={techImg.alt} className="h-6 w-6 md:h-8 md:w-8 transition-all duration-300 hover:scale-110" title={techImg.title} />
+          <img src={techImg.src} alt={techImg.alt} className="h-4 w-4 md:h-8 md:w-8 transition-all duration-300 hover:scale-110" title={techImg.title} />
           <span className="text-xs text-gray-400 mt-1">{techImg.title}</span>
         </div>
       ))}
