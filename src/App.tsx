@@ -215,7 +215,7 @@ export default function App() {
           Build faster with a complete foundation
         </h1>
         <TechImages />
-        <p className="max-w-xl md:text-base text-sm text-gray-400">
+        <p className="md:max-w-2xl max-w-lg md:text-base text-sm text-gray-400">
           Everything you need to start building production-ready applications. TypeScript, Tailwind
           CSS, authentication, and neon postgresql database — all pre-configured
         </p>
