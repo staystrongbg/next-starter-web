@@ -46,7 +46,7 @@ export const NotificationBoard = ({
     <div
       role={type === 'error' ? 'alert' : 'status'}
       aria-live="polite"
-      className={`flex rounded-lg border-2 ${style.border} ${style.bg} p-1.5 md:p-3`}
+      className={`flex items-center rounded-lg border-2 ${style.border} ${style.bg} p-1.5 md:p-3`}
     >
       <Icon className={`h-4 w-4 shrink-0 ${style.iconColor}`} aria-hidden="true" />
       <span className={`ml-1 md:ml-2 text-sm ${style.textColor}`}>{children}</span>
