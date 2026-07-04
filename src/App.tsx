@@ -26,6 +26,7 @@ interface TechImage {
   alt: string;
   title: string;
 }
+
 interface Resources {
   name: string;
   url: string;
@@ -205,24 +206,26 @@ export default function App() {
       {/* Description */}
       <div className="flex flex-col items-center gap-6 text-center">
         <div className="flex items-center gap-2 text-sm font-medium">
-          <Rocket className="h-4 w-4 text-orange-600 dark:text-orange-400" />
+          <Rocket className="h-4 w-4 text-orange-400" />
           <span className="bg-linear-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">
             Next.js Starter Kit
           </span>
         </div>
-        <h1 className="max-w-2xl text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl dark:text-gray-100">
+        <h1 className="max-w-2xl text-4xl font-bold tracking-tight sm:text-5xl text-gray-100">
           Build faster with a complete foundation
         </h1>
         <TechImages />
-        <p className="max-w-xl text-lg text-gray-600 dark:text-gray-400">
+        <p className="max-w-xl text-lg text-gray-400">
           Everything you need to start building production-ready applications. TypeScript, Tailwind
           CSS, authentication, and neon postgresql database — all pre-configured
         </p>
       </div>
+
       <div className='flex flex-col gap-12'>
         <Features />
         <FolderStructure />
       </div>
+
       <div className="flex flex-col gap-4">
         <GitRepo />
         <Resources />
@@ -238,7 +241,7 @@ function GitRepo() {
       <p className="text-sm font-medium text-gray-400">Repository</p>
     <div className="flex items-center gap-2">
       <GitBranch className="h-4 w-4 text-gray-200" / >
-      <a className="dark:text-cyan-400 dark:hover:text-cyan-300 transition-colors" href="https://github.com/staystrongbg/next-starter" target="_blank" rel="noopener noreferrer">
+      <a className="text-cyan-400 hover:text-cyan-300 transition-colors" href="https://github.com/staystrongbg/next-starter" target="_blank" rel="noopener noreferrer">
         GitHub
       </a>
     </div>
@@ -249,12 +252,12 @@ function GitRepo() {
 function Resources() {
   return( 
       <div className="flex items-center gap-2 text-sm text-gray-100">
-        <div className="text-sm font-medium dark:text-gray-400">Resources</div>
+        <div className="text-sm font-medium text-gray-400">Resources</div>
         <div className="flex items-center gap-3">
           {resources.map((resource) => (
             <div key={resource.name} className="flex items-center gap-1">
               {resource.img && <img src={resource.img} alt={resource.name} className="h-4 w-4" />}
-              <a className="dark:text-cyan-400 dark:hover:text-cyan-300 transition-colors" href={resource.url} target="_blank" rel="noopener noreferrer">
+              <a className="text-cyan-400 hover:text-cyan-300 transition-colors" href={resource.url} target="_blank" rel="noopener noreferrer">
                 {resource.name}
               </a>
             </div>
@@ -282,14 +285,14 @@ function Features() {
       {features.map(feature => (
         <div
           key={feature.title}
-          className="group flex flex-col gap-4 rounded-xl border border-gray-200 bg-gray-50 p-6 transition-all hover:shadow-md dark:border-indigo-900/50 dark:bg-slate-800/50 dark:backdrop-blur-sm dark:hover:border-indigo-500/50 dark:hover:shadow-indigo-500/10"
+          className="group flex flex-col gap-4 rounded-xl border border-gray-800 p-6 transition-all hover:shadow-md :border-indigo-900/50 bg-slate-800/50 backdrop-blur-sm hover:border-indigo-500/50 hover:shadow-indigo-500/10"
         >
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg text-blue-600 dark:bg-indigo-950 dark:text-indigo-400">
-            <feature.icon className="h-5 w-5 text-blue-600 dark:text-indigo-400" />
+          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-950 text-indigo-400">
+            <feature.icon className="h-5 w-5 text-indigo-400" />
           </div>
           <div>
-            <h3 className="font-semibold text-gray-900 dark:text-gray-100">{feature.title}</h3>
-            <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">{feature.description}</p>
+            <h3 className="font-semibold text-gray-100">{feature.title}</h3>
+            <p className="mt-1 text-sm text-gray-600 ">{feature.description}</p>
           </div>
         </div>
       ))}
@@ -301,11 +304,11 @@ function FolderStructure() {
   return (
     <div className="w-full" aria-label="Project structure">
       <div className="mb-6 text-center">
-        <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100">Project Structure</h2>
-        <p className="text-sm text-gray-600 dark:text-gray-400">Explore the folder structure of Next-Starter</p>
+        <h2 className="text-2xl font-bold text-gray-100">Project Structure</h2>
+        <p className="text-sm text-gray-400">Explore the folder structure of Next-Starter</p>
       </div>
-      <div className="h-[50vh] w-full overflow-y-scroll rounded-xl border border-gray-200 dark:border-indigo-900/50 bg-slate-900">
-        <div className="bg-slate-800 px-4 py-2 text-xs font-medium text-orange-500 dark:text-orange-400">
+      <div className="h-[50vh] w-full overflow-y-scroll rounded-xl border border-gray-800 bg-slate-900">
+        <div className="bg-slate-800 px-4 py-2 text-xs font-medium text-orange-400">
           next-starter/
         </div>
         <div className="p-4">
@@ -315,19 +318,19 @@ function FolderStructure() {
               return (
                 <div
                   key={index}
-                  className="flex items-center gap-2 py-1 text-gray-200 dark:text-gray-300"
+                  className="flex items-center gap-2 py-1 text-gray-300"
                   style={{ paddingLeft: `${item.indent * 1.5}rem` }}
                 >
                   {isFolder ? (
-                    <Folder className="h-4 w-4 text-blue-500 dark:text-cyan-400" />
+                    <Folder className="h-4 w-4 text-cyan-400" />
                   ) : (
-                    <FileCode className="h-4 w-4 text-gray-400 dark:text-gray-600" />
+                    <FileCode className="h-4 w-4 text-gray-600" />
                   )}
                   <span
                     className={
                       isFolder
-                        ? 'text-blue-500 dark:text-cyan-400'
-                        : 'text-gray-700 dark:text-gray-300'
+                        ? 'text-cyan-400'
+                        : 'text-gray-300'
                     }
                   >
                     {item.name}
