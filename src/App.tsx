@@ -195,7 +195,7 @@ export default function App() {
       <SpiderWeb />
 
       {/* Notifications */}
-      <div className="flex flex-col items-center gap-6 text-center">
+      <div className="flex flex-col gap-3 md:gap-6">
         {notifications.map((n, i) => (
           <NotificationBoard key={i} type={n.type}>
             {renderInlineCode(n.text)}
