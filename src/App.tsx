@@ -1,6 +1,7 @@
 import { Database, FileCode, Folder, GitBranch, Layers, Rocket, Shield, Zap } from 'lucide-react';
 import { NotificationBoard } from './components/shared/notification-board';
 import { Footer } from './components/navigation/footer';
+import { SpiderWeb } from './components/spider-web';
 
 const features = [
   {
@@ -84,9 +85,24 @@ const fileTree = [
   { name: 'settings.json', type: 'file', indent: 1 },
 ];
 
+const techImages = [
+  { src: '/nextjs-light.svg', alt: 'Next.js', title: 'Next.js' },
+  { src: '/neon-light.svg', alt: 'Neon', title: 'Neon' },
+  { src: '/shadcn-ui-light.svg', alt: 'shadcn/ui', title: 'shadcn/ui' },
+  { src: '/react-hook-form-light.svg', alt: 'React Hook Form', title: 'React Hook Form' },
+  { src: '/prisma-light.svg', alt: 'Prisma', title: 'Prisma' },
+  { src: '/zod-light.svg', alt: 'Zod', title: 'Zod' },
+  { src: '/better-auth-light.svg', alt: 'Better Auth', title: 'Better Auth' },
+  { src: '/tanstack-query-light.svg', alt: 'TanStack Query', title: 'TanStack Query' },
+
+];
+
 export default function App() {
   return (
-    <div className="mx-auto flex max-w-5xl flex-col items-center gap-16 px-4 pt-12">
+    <div className="relative mx-auto flex max-w-5xl flex-col items-center gap-16 px-4 pt-12">
+      <SpiderWeb />
+
+      {/* Notifications */}
       <div className="flex flex-col items-center gap-6 text-center">
         <NotificationBoard>
           Note that experimental Nextjs{' '}
@@ -106,41 +122,20 @@ export default function App() {
           Modify <CodeBlock bg="bg-blue-200 dark:bg-indigo-950">schema.prisma</CodeBlock> file and run{' '}
           <CodeBlock bg="bg-blue-200 dark:bg-indigo-950">db:push</CodeBlock>
         </NotificationBoard>
+      </div>
+
+      {/* Description */}
+      <div className="flex flex-col items-center gap-6 text-center">
         <div className="flex items-center gap-2 text-sm font-medium">
           <Rocket className="h-4 w-4 text-orange-600 dark:text-orange-400" />
-          <span className="bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">
+          <span className="bg-linear-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">
             Next.js Starter Kit
           </span>
         </div>
         <h1 className="max-w-2xl text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl dark:text-gray-100">
           Build faster with a complete foundation
         </h1>
-        <div className='flex gap-6 py-8'>
-          <div className="rounded-lg p-2 transition-all duration-300 hover:bg-purple-500/20 hover:shadow-lg hover:shadow-purple-500/30">
-            <img src="/better-auth-light.svg" alt="Better Auth" className="h-8 w-8 transition-all duration-300 hover:scale-110" title="Better Auth" />
-          </div>
-          <div className="rounded-lg p-2 transition-all duration-300 hover:bg-purple-500/20 hover:shadow-lg hover:shadow-purple-500/30">
-            <img src="/nextjs-light.svg" alt="Next.js" className="h-8 w-8 transition-all duration-300 hover:scale-110" title="Next.js" />
-          </div>
-          <div className="rounded-lg p-2 transition-all duration-300 hover:bg-purple-500/20 hover:shadow-lg hover:shadow-purple-500/30">
-            <img src="/tanstack-query-light.svg" alt="TanStack Query" className="h-8 w-8 transition-all duration-300 hover:scale-110" title="TanStack Query" />
-          </div>
-          <div className="rounded-lg p-2 transition-all duration-300 hover:bg-purple-500/20 hover:shadow-lg hover:shadow-purple-500/30">
-            <img src="/zod-light.svg" alt="Zod" className="h-8 w-8 transition-all duration-300 hover:scale-110" title="Zod" />
-          </div>
-          <div className="rounded-lg p-2 transition-all duration-300 hover:bg-purple-500/20 hover:shadow-lg hover:shadow-purple-500/30">
-            <img src="/prisma-light.svg" alt="Prisma" className="h-8 w-8 transition-all duration-300 hover:scale-110" title="Prisma" />
-          </div>
-          <div className="rounded-lg p-2 transition-all duration-300 hover:bg-purple-500/20 hover:shadow-lg hover:shadow-purple-500/30">
-            <img src="/neon-light.svg" alt="Neon" className="h-8 w-8 transition-all duration-300 hover:scale-110" title="Neon" />
-          </div>
-          <div className="rounded-lg p-2 transition-all duration-300 hover:bg-purple-500/20 hover:shadow-lg hover:shadow-purple-500/30">
-            <img src="/shadcn-ui-light.svg" alt="shadcn/ui" className="h-8 w-8 transition-all duration-300 hover:scale-110" title="shadcn/ui" />
-          </div>
-          <div className="rounded-lg p-2 transition-all duration-300 hover:bg-purple-500/20 hover:shadow-lg hover:shadow-purple-500/30">
-            <img src="/react-hook-form-light.svg" alt="React Hook Form" className="h-8 w-8 transition-all duration-300 hover:scale-110" title="React Hook Form" />
-          </div>
-        </div>
+        <TechImages />
         <p className="max-w-xl text-lg text-gray-600 dark:text-gray-400">
           Everything you need to start building production-ready applications. TypeScript, Tailwind
           CSS, authentication, and neon postgresql database — all pre-configured
@@ -149,6 +144,14 @@ export default function App() {
 
       <Features />
       <FolderStructure />
+      <Resources />
+      <Footer />
+    </div>
+  );
+}
+
+function Resources() {
+  return(
       <div className="flex items-center gap-2 text-lg text-gray-100">
         <div className="text-sm font-medium dark:text-gray-400">Resources</div>
         <div className="flex items-center gap-2">
@@ -158,7 +161,17 @@ export default function App() {
           </a>
         </div>
       </div>
-      <Footer />
+  )
+}
+
+function TechImages() {
+  return (
+    <div className='flex gap-6 py-8'>
+      {techImages.map((techImg) => (
+        <div key={techImg.alt} className="rounded-lg p-2 transition-all duration-300 hover:bg-purple-500/20 hover:shadow-lg hover:shadow-purple-500/30">
+          <img src={techImg.src} alt={techImg.alt} className="h-8 w-8 transition-all duration-300 hover:scale-110" title={techImg.title} />
+        </div>
+      ))}
     </div>
   );
 }
@@ -189,9 +202,6 @@ function FolderStructure() {
     <div className="w-full" aria-label="Project structure">
       <div className="mb-6 text-center">
         <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100">Project Structure</h2>
-        <p className="mt-2 text-gray-600 dark:text-gray-400">
-          Organized by feature for easy navigation
-        </p>
       </div>
       <div className="h-[50vh] w-full overflow-y-scroll rounded-xl border border-gray-200 bg-gray-200 dark:border-indigo-900/50 dark:bg-slate-900">
         <div className="bg-gray-700 px-4 py-2 text-xs font-medium text-orange-500 dark:bg-slate-800 dark:text-orange-400">
