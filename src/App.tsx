@@ -191,7 +191,7 @@ function renderInlineCode(text: string) {
 
 export default function App() {
   return (
-    <div className="relative mx-auto flex max-w-5xl flex-col items-center gap-16 px-4 pt-12">
+    <div className="relative mx-auto flex max-w-5xl w-full flex-col items-center gap-16 px-4 pt-12">
       <SpiderWeb />
 
       {/* Notifications */}
@@ -211,11 +211,11 @@ export default function App() {
             Next.js Starter Kit
           </span>
         </div>
-        <h1 className="max-w-2xl w-full text-3xl md:text-4xl font-bold tracking-tight sm:text-5xl text-gray-100">
+        <h1 className="w-full text-3xl font-bold tracking-tight md:text-5xl text-gray-100">
           Build faster with a complete foundation
         </h1>
         <TechImages />
-        <p className="max-w-2xl w-full md:text-base text-sm text-gray-400">
+        <p className="w-full max-w-2xl md:text-base text-sm text-gray-400">
           Everything you need to start building production-ready applications. TypeScript, Tailwind
           CSS, authentication, and neon postgresql database — all pre-configured
         </p>
