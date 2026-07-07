@@ -175,11 +175,11 @@ const techImages: TechImage[] = [
 const notifications: Notification[] = [
   { text: 'Note that experimental Nextjs `AuthInterups` feature is enabled for handling unauthorized redirections' },
   { text: '`.env.example` is a good place to start' },
-  { text: 'To use Github or any social authentication, set up the corresponding environment variables and enable the providers in the `auth.ts`' },
+  { text: 'To use Github or any social authentication, set up the corresponding environment variables and enable the providers in t`auth.ts`' },
   { text: 'Modify `schema.prisma` file and run `db:push`' },
 ];
 
-function renderInlineCode(text: string) {
+function renderInlineCode(text: string): React.ReactNode {
   const parts = text.split(/(`[^`]+`)/g);
   return parts.map((part, i) => {
     if (part.startsWith('`') && part.endsWith('`')) {
