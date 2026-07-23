@@ -145,7 +145,6 @@ const fileTree: FileTreeItem[] = [
   { name: 'helpers/', type: 'folder', indent: 1 },
   { name: 'generate-user-avatar.ts', type: 'file', indent: 2 },
   { name: 'get-pwd-strength.ts', type: 'file', indent: 2 },
-  { name: 'types/', type: 'folder', indent: 1 },
   { name: 'index.ts', type: 'file', indent: 2 },
   { name: 'prisma.ts', type: 'file', indent: 1 },
   { name: 'providers.tsx', type: 'file', indent: 1 },
