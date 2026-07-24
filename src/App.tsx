@@ -112,7 +112,7 @@ const resources:Resources[] = [
 
 
 const fileTree: FileTreeItem[] = [
-  { name: 'src/', type: 'folder', indent: 0 },
+   { name: 'src/', type: 'folder', indent: 0 },
   { name: 'app/', type: 'folder', indent: 1 },
   { name: '(auth)/', type: 'folder', indent: 2 },
   { name: 'sign-in/page.tsx', type: 'file', indent: 3 },
@@ -149,6 +149,16 @@ const fileTree: FileTreeItem[] = [
   { name: 'prisma.ts', type: 'file', indent: 1 },
   { name: 'providers.tsx', type: 'file', indent: 1 },
   { name: 'proxy.ts', type: 'file', indent: 1 },
+  { name: 'hooks/', type: 'folder', indent: 1 },
+  { name: 'use-clear-server-error.ts', type: 'file', indent: 2 },
+  { name: 'use-forgot-password.ts', type: 'file', indent: 2 },
+  { name: 'use-password-reset.ts', type: 'file', indent: 2 },
+  { name: 'use-password-visibility.ts', type: 'file', indent: 2 },
+  { name: 'use-redirect.ts', type: 'file', indent: 2 },
+  { name: 'use-resend-verification-email.ts', type: 'file', indent: 2 },
+  { name: 'use-signin.ts', type: 'file', indent: 2 },
+  { name: 'use-signup.ts', type: 'file', indent: 2 },
+  { name: 'use-token.ts', type: 'file', indent: 2 },
   { name: 'prisma/', type: 'folder', indent: 0 },
   { name: 'schema.prisma', type: 'file', indent: 1 },
   { name: 'public/', type: 'folder', indent: 0 },
